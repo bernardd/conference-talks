@@ -2,7 +2,7 @@ var SLIDE_CONFIG = {
   // Slide settings
   settings: {
     title: 'Sneaking Erlang in<br>Through the Back Door',
-    subtitle: 'Subtitle Goes Here',
+    subtitle: 'and convincing people you\'re not mad',
     eventInfo: {
       title: 'Erlang Factory SF',
       date: '2013-03-07'
