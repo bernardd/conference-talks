@@ -1,0 +1,33 @@
+Who are we?
+Who am I?
+This is not a HOWTO :)
+What was our old platform?
+Why did it suck?
+Why Erlang? You know why.
+Make sure it's the right tool.
+First Contact: TFTP
+* Sam is mad
+PHLEM
+* This is where I came in
+* And decided "this is for us"
+So, next time I was in the US, I gave a few talks to try to convince people
+"There's no inheritance"
+"No global data at all which is like killing a dog because it has flies"
+"No type checking"
+"Obscure language - NetBSD has more websites than Erlang"
+"If someone likes the syntax, it can be easily [reimplemented] uin C++ using
+operators"
+"The Law of Leaky Abstraction."
+"In my opinion Erlang just adds additional huge level of abstraction without clear benefits and we should avoid it"
+Gotta prove it works
+Plugging into existing binary protocols
+Codegen is your friend
+erld is also your friend
+32-bit is your frenemy
+* Catches OOM crashes earlier
+* Actually crashes :(
+
+
+
+
+Thanks: Franko, Erlang Factory SF, Google for slides
