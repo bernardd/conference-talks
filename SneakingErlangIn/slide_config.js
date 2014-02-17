@@ -27,7 +27,8 @@ var SLIDE_CONFIG = {
     //gplus: 'http://plus.google.com/1234567890',
     //twitter: '@yourhandle',
     www: 'http://shoretel.com',
-    github: 'http://github.com/ShoreTel-Inc'
+    github: 'http://github.com/ShoreTel-Inc',
+    email: 'bduggan@shoretel.com'
   }/*, {
     name: 'Second Name',
     company: 'Job Title, Google',
