@@ -5,7 +5,7 @@ var SLIDE_CONFIG = {
     subtitle: 'and convincing people you\'re not mad',
     eventInfo: {
       title: 'Erlang Factory SF',
-      date: '2013-03-07'
+      date: '2014-03-07'
     },
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true

@@ -43,7 +43,7 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>I Come from the Land Down Under</h2>
     </hgroup>
@@ -52,11 +52,36 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
+  <slide>
+    <hgroup>
+      <h2>I Come from the Land Down Under</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/map.png">
+      <footer class="source">source: Goolge Maps</footer>
+   </article>
+  </slide>
+
+
   <slide class="fill nobackground" style="background-image: url(images/canberra.jpg)">
     <hgroup>
       <h2 class="white"></h2>
     </hgroup>
     <footer class="source white">www.canberrayourfuture.com.au/workspace/images/banner-three.jpg</footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/shark.jpg)">
+    <hgroup>
+      <h2 class="white"></h2>
+    </hgroup>
+    <footer class="source black">media.brainz.org/uploads/2011/03/12-great-white.jpg</footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/cassowary.jpg)">
+    <hgroup>
+      <h2 class="white"></h2>
+    </hgroup>
+    <footer class="source white">media.brainz.org/uploads/2011/03/9-cassowary.jpg</footer>
   </slide>
 
   <slide class="fill nobackground" style="background-image: url(images/skywhale.jpg)">
@@ -65,21 +90,6 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <footer class="source white">www.abc.net.au/news/image/4683536-3x2-940x627.jpg</footer>
   </slide>
-
-  <slide class="fill nobackground" style="background-image: url(images/shark.jpg)">
-    <hgroup>
-      <h2 class="white"></h2>
-    </hgroup>
-    <footer class="source white">media.brainz.org/uploads/2011/03/12-great-white.jpg</footer>
-  </slide>
-
-  <slide class="fill nobackground" style="background-image: url(images/cassowary.jpg)">
-    <hgroup>
-      <h2 class="white"></h2>
-    </hgroup>
-    <footer class="source white">http://media.brainz.org/uploads/2011/03/9-cassowary.jpg</footer>
-  </slide>
-
 
   <slide>
     <hgroup>
@@ -110,277 +120,74 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
-  <slide hidden>
+  <slide>
     <hgroup>
-      <h2>Slide with Bullets that Build</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Far from Perfect</h2>
     </hgroup>
     <article>
-      <p>A list where items build:</p>
-      <ul class="build">
-        <li>Pressing 'h' highlights code snippets</li>
-        <li>Pressing 'p' toggles speaker notes (if they're on the current slide)</li>
-        <li>Pressing 'f' toggles fullscreen viewing</li>
-        <li>Pressing 'w' toggles widescreen</li>
-        <li>Pressing 'o' toggles overview mode</li>
-        <li>Pressing 'ESC' toggles off these goodies</li>
-      </ul>
-      <p>Another list, but items fade as they build:</p>
-      <ul class="build fade">
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
+      <ul style="build">
+        <li>C/C++ code</li>
+        <li>One invalid pointer can take down thousands of phones</li>
+        <li>No hot upgrades</li>
+        <li>Ever tried to debug a crash in STL?</li>
+        <li>State machines are not an easy concurrency model</li>
       </ul>
     </article>
   </slide>
 
   <slide>
-    <hgroup hidden>
-      <h2>Slide with (Smaller Font)</h2>
-    </hgroup>
-    <article class="smaller">
-      <ul>
-        <li>All <a href="http://google.com">links</a> open in new tabs.</li>
-        <li>To change that this, add <code>target="_self"</code> to the link.</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide hidden>
-    Hidden slides are left out of the presentation.
-  </slide>
-
-  <slide hidden>
     <hgroup>
-      <h2>Code Slide (with Subtitle Placeholder)</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Erlwhat?</h2>
     </hgroup>
     <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
+      <ul style ="build">
+        <li>Colleague returned from LCA 2007 raving about Erlang</li>
+        <li>Natrually we dismissed him as being a lunatic</li>
+        <li>Happened to have a small, stnad-alone task - a multiplexing TFTP server</li>
+        <li>World didn't end when we started using it in production</li>
+      </ul>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Code Slide (Smaller Font)</h2>
-    </hgroup>
-    <article class="smaller">
-      <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
-  }
-}
-</pre>
-<pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-<pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
-</pre>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>Point I wanted to make #1</li>
-          <li>Point I wanted to make #2</li>
-          <li>Point I wanted to make #3</li>
-          <li>Example <a href="#">link</a> in notes.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Slide with Speaker Notes</h2>
+      <h2>PHLEM</h2>
+      <h3>The PHone Logic EMulator</h3>
     </hgroup>
     <article>
-      <p>Press 'p' to toggle speaker notes.</p>
+      <ul style ="build">
+         <li>Somehow we'd gotten where we were with no test systems other than real phones</li>
+         <li>Initial bit of code was written in "spare time" to emulate a single phone</li>
+         <li>I picked it up and with minimal effort made it work for thousands of phones</li>
+         <li>Okay, maybe our lunatic was on to something here...</li>
+      </ul>
     </article>
   </slide>
 
-  <slide hidden>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>See this amazing link: <a href="http://www.google.com">link</a>.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
+  <slide class="fill nobackground" style="background-image: url(images/qantas.jpg)">
     <hgroup>
-      <h2>Presenter Mode</h2>
+      <h2 class="white">Spread the Word!</h2>
+    </hgroup>
+    <footer class="source white">w.minecraft-smp.de/e107_files/public/1366197563_42_FT9337_qantas-747.jpg</footer>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Convincing the rest of the Team</h2>
     </hgroup>
     <article>
-      <p>Add <code><a href="?presentme=true" target="_self">?presentme=true</a></code> to the URL to enabled presenter mode.
-      This setting is sticky, meaning refreshing the page will persist presenter
-      mode.</p>
-      <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
+      <ul style ="build">
+         <li>Gave talks explaining Erlang from the basics</li>
+         <ul>
+            <li>What it looks like</li>
+            <li>Why it isn't scary</li>
+            <li>Why it was a perfect fit for us</li>
+         </ul>
+         <li>Demonstrated what we'd done so far and <b>how little code it took</b></li>
+      </ul>
     </article>
   </slide>
 
-  <slide hidden>
-    <hgroup>
-      <h2>Slide with Image</h2>
-    </hgroup>
-    <article>
-      <img src="images/chart.png" class="reflect" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Slide with Image (Centered horz/vert)</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <img src="images/barchart.png" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Table Option A</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Table Option A (Smaller Text)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article class="smaller">
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Table Option B</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table class="rows">
-        <tr>
-          <th>Header 1</th><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 2</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 3</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 4</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 5</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide hidden>
-    <hgroup>
-      <h2>Slide Styles</h2>
-    </hgroup>
-    <article class="smaller">
-      <div class="columns-2">
-        <ul>
-          <li class="red">class="red"</li>
-          <li class="red2">class="red2"</li>
-          <li class="red3">class="red3"</li>
-          <li class="blue">class="blue"</li>
-          <li class="blue2">class="blue2"</li>
-          <li class="blue3">class="blue3"</li>
-          <li class="green">class="green"</li>
-          <li class="green2">class="green2"</li>
-        </ul>
-        <ul>
-          <li class="green3">class="green3"</li>
-          <li class="yellow">class="yellow"</li>
-          <li class="yellow2">class="yellow2"</li>
-          <li class="yellow3">class="yellow3"</li>
-          <li class="gray">class="gray"</li>
-          <li class="gray2">class="gray2"</li>
-          <li class="gray3">class="gray3"</li>
-          <li class="gray4">class="gray4"</li>
-        </ul>
-      </div>
-      <div class="centered" style="margin-top:2em">
-        I am centered text with a <button>Button</button> and <button disabled>Disabled</button> button.
-      </div>
-    </article>
-  </slide>
 
   <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/shoretel_logo_128.png"></aside>
@@ -445,18 +252,18 @@ function helloWorld(world) {
 typedef struct {
    int id;
    long long key;
-   string[10] message;
+   char message[10];
 } message_t;
 </pre>
 <p>Sender</p>
       <pre class="prettyprint" data-lang="c++">
 message_t msg = {5, 10, "Hello"};
-<b>write(sock, &msg, sizeof(msg);</b>
+<b>write(sock, &msg, sizeof(msg));</b>
 </pre>
 <p>Receiver</p>
 <pre class="prettyprint" data-lang="c++">
 message_t msg;
-<b>read(sock, &msg, sizeof(msg);</b>
+<b>read(sock, &msg, sizeof(msg));</b>
 </pre>
     </article>
   </slide>
@@ -480,9 +287,9 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
    &lt;&lt;
       Id:32/signed-little,
       Key:64/signed-little,
-      list_to_bitstring(string:substr(Message), 1, 10-1)/bitstring),
+      (list_to_bitstring(string:substr(Message, 1, 10-1)))/bitstring,
       0:((10 - lists:min([10-1, length(Message)]))*8)
-   &gt;&gt;
+   &gt;&gt;.
 	</pre>
     </article>
   </slide>
@@ -507,7 +314,7 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
    &lt;&lt;
       Id:32/signed-little,
       Key:64/signed-little,
-      list_to_bitstring(string:substr(Message), 1, 10-1)/bitstring),
+      (list_to_bitstring(string:substr(Message, 1, 10-1)))/bitstring,
       0:((10 - lists:min([10-1, length(Message)]))*8),
       <b>0:(2*8)</b>
    &gt;&gt;.
@@ -537,7 +344,7 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
       Id:32/signed-little,
       <b>0:(4*8), % Pad to long long boundary</b>
       Key:64/signed-little,
-      list_to_bitstring(string:substr(Message), 1, 10-1)/bitstring),
+      (list_to_bitstring(string:substr(Message, 1, 10-1)))/bitstring,
       0:((10 - lists:min([10-1, length(Message)]))*8),
       <b>0:(6*8) % Pad to boundary of largest struct memeber</b>
    &gt;&gt;.
@@ -555,11 +362,11 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
         <li>Erlang parser + yecc + erlydtl</li>
         <li>Many output formats:
         <ul>
-           <li>Erlang</li>
-           <li>C++</li>
-           <li>Java</li>
-           <li>Python</li>
-           <li>SQL</li>
+           <li>Erlang (records, encoders/decoders)</li>
+           <li>C++ (structs)</li>
+           <li>Java (classes, encoders/decoders)</li>
+           <li>Python (DB modification)</li>
+           <li>SQL (DB schema and updates)</li>
         </ul>
         </li>
      </ul>
@@ -574,20 +381,19 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
     <article>
       <p>Start Small:</p>
       <ul class="build">
-        <li>Start with non-core elements</li>
-        <li>One piece at a time - you're not going to get a year off to rewrite your whole system</li>
-		  <li>Don't build anything critical first - you <i>will</i> make mistakes</li>
-		  <li>Erlang is easy<sup>[citation needed]</sup> but building concurrent, high load, reliable production systems still isn't</li>
+         <li>Start with non-core elements</li>
+         <li>One piece at a time - you're not going to get a year off to rewrite your whole system</li>
+         <li>Don't build anything critical first - you <i>will</i> make mistakes</li>
+         <li>Erlang is easy<sup>[<u class="blue">citation needed</u>]</sup> but building concurrent, high load, reliable production systems still isn't</li>
       </ul>
     </article>
   </slide>
-
 
   <slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/shoretel_logo_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Thank You!</h2>
-      <p>Contact me!</p>
+      <p>Send whiskey to:</p>
     </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->
@@ -598,22 +404,5 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
   <slide class="backdrop"></slide>
 
 </slides>
-
-<script>
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-</script>
-
-<!--[if IE]>
-  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
-  <script>CFInstall.check({mode: 'overlay'});</script>
-<![endif]-->
 </body>
 </html>

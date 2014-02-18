@@ -11,15 +11,7 @@ PHLEM
 * This is where I came in
 * And decided "this is for us"
 So, next time I was in the US, I gave a few talks to try to convince people
-"In my opinion Erlang just adds additional huge level of abstraction without clear benefits and we should avoid it"
 Gotta prove it works
-Plugging into existing binary protocols
-Codegen is your friend
-erld is also your friend
-32-bit is your frenemy
-* Catches OOM crashes earlier
-* Actually crashes :(
-
 
 
 
