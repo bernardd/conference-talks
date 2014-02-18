@@ -83,23 +83,34 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Slide with Bullets</h2>
+      <h2>ShoreTel Sky</h2>
     </hgroup>
     <article>
       <ul>
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
-          <ul>
-            <li>Subtitle capitalization is title case</li>
-          </ul>
-        </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
+        <li>Hosted business phone systems</li>
+		  <li>VoIP: Just a phone and an Internet connection on the client side</li>
+        <li>Thousands of companies hosted on our servers</li>
+		  <li>&gt;10,000 phones per server</li>
       </ul>
     </article>
   </slide>
 
   <slide>
+    <hgroup>
+      <h2>Legacy Platform</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>C/C++ code</li>
+		  <li>Massively parallel*</li>
+        <li>Robust</li>
+		  <li>Surprisingly scalable</li>
+      </ul>
+	<footer class="source">* Sort of</footer>
+    </article>
+  </slide>
+
+  <slide hidden>
     <hgroup>
       <h2>Slide with Bullets that Build</h2>
       <h3>Subtitle Placeholder</h3>
@@ -124,7 +135,7 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide>
-    <hgroup>
+    <hgroup hidden>
       <h2>Slide with (Smaller Font)</h2>
     </hgroup>
     <article class="smaller">
@@ -139,7 +150,7 @@ URL: https://code.google.com/p/io-2012-slides
     Hidden slides are left out of the presentation.
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Code Slide (with Subtitle Placeholder)</h2>
       <h3>Subtitle Placeholder</h3>
@@ -194,7 +205,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <aside class="note">
       <section>
         <ul>
@@ -214,7 +225,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <aside class="note">
       <section>
         <ul>
@@ -234,7 +245,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Slide with Image</h2>
     </hgroup>
@@ -244,7 +255,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Slide with Image (Centered horz/vert)</h2>
     </hgroup>
@@ -254,7 +265,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Table Option A</h2>
       <h3>Subtitle Placeholder</h3>
@@ -283,7 +294,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Table Option A (Smaller Text)</h2>
       <h3>Subtitle Placeholder</h3>
@@ -312,7 +323,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Table Option B</h2>
       <h3>Subtitle Placeholder</h3>
@@ -338,7 +349,7 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
+  <slide hidden>
     <hgroup>
       <h2>Slide Styles</h2>
     </hgroup>
@@ -374,16 +385,9 @@ function helloWorld(world) {
   <slide class="segue dark nobackground">
     <aside class="gdbar"><img src="images/shoretel_logo_128.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>Segue Slide</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Objections</h2>
+      <h3>"We shouldn't do this because..."</h3>
     </hgroup>
-  </slide>
-
-  <slide class="fill nobackground" style="background-image: url(images/sky.jpg)">
-    <hgroup>
-      <h2 class="white">Full Image (with Optional Header)</h2>
-    </hgroup>
-    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
   </slide>
 
   <slide class="segue dark quote nobackground">
@@ -432,27 +436,164 @@ function helloWorld(world) {
   </slide>
 
   <slide>
+    <hgroup>
+      <h2>Binary Struct-based Protocols</h2>
+      <h3>It seemed like such a good idea at the time</h3>
+    </hgroup>
     <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
+      <pre class="prettyprint" data-lang="c++">
+typedef struct {
+   int id;
+   long long key;
+   string[10] message;
+} message_t;
+</pre>
+<p>Sender</p>
+      <pre class="prettyprint" data-lang="c++">
+message_t msg = {5, 10, "Hello"};
+<b>write(sock, &msg, sizeof(msg);</b>
+</pre>
+<p>Receiver</p>
+<pre class="prettyprint" data-lang="c++">
+message_t msg;
+<b>read(sock, &msg, sizeof(msg);</b>
+</pre>
     </article>
   </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Erlang Side</h2>
+    </hgroup>
+    <article>
+<p>Receiver</p>
+		<pre class="prettyprint" data-lang="erlang">
+parse(&lt;&lt;Id:32/signed-little, Key:64/signed-little, Message:(10*8)/bitstring&gt;&gt;) -&gt;
+   #message_t{
+      id = Id,
+      key = Key,
+      message = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Message)}.
+</pre>
+<p>Sender</p>
+		<pre class="prettyprint" data-lang="erlang">
+encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
+   &lt;&lt;
+      Id:32/signed-little,
+      Key:64/signed-little,
+      list_to_bitstring(string:substr(Message), 1, 10-1)/bitstring),
+      0:((10 - lists:min([10-1, length(Message)]))*8)
+   &gt;&gt;
+	</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+		<h2>Oops</h2>
+		<h3>Forgot the padding...</h3>
+    </hgroup>
+    <article class="smaller">
+<p>Receiver</p>
+		<pre class="prettyprint" data-lang="erlang">
+parse(&lt;&lt;Id:32/signed-little, Key:64/signed-little, Message:(10*8)/bitstring, <b>_Pad:(2*8)</b>&gt;&gt;) -&gt;
+   #message_t{
+      id = Id,
+      key = Key,
+      message = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Message)}.
+</pre>
+<p>Sender</p>
+		<pre class="prettyprint" data-lang="erlang">
+encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
+   &lt;&lt;
+      Id:32/signed-little,
+      Key:64/signed-little,
+      list_to_bitstring(string:substr(Message), 1, 10-1)/bitstring),
+      0:((10 - lists:min([10-1, length(Message)]))*8),
+      <b>0:(2*8)</b>
+   &gt;&gt;.
+	</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+		<h2>Oops again</h2>
+		<h3>x86_64 pads differently...</h3>
+    </hgroup>
+    <article class="smaller">
+<p>Receiver</p>
+		<pre class="prettyprint" data-lang="erlang">
+parse(&lt;&lt;Id:32/signed-little, <b>_Pad/(4*8)</b>, Key:64/signed-little, 
+      Message:(10*8)/bitstring, <b>_Pad2:(6*8)</b>&gt;&gt;) -&gt;
+   #message_t{
+      id = Id,
+      key = Key,
+      message = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Message)}.
+</pre>
+<p>Sender</p>
+		<pre class="prettyprint" data-lang="erlang">
+encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
+   &lt;&lt;
+      Id:32/signed-little,
+      <b>0:(4*8), % Pad to long long boundary</b>
+      Key:64/signed-little,
+      list_to_bitstring(string:substr(Message), 1, 10-1)/bitstring),
+      0:((10 - lists:min([10-1, length(Message)]))*8),
+      <b>0:(6*8) % Pad to boundary of largest struct memeber</b>
+   &gt;&gt;.
+	</pre>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Yarn Code Generator</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Erlang-like canonical files</li>
+        <li>Erlang parser + yecc + erlydtl</li>
+        <li>Many output formats:
+        <ul>
+           <li>Erlang</li>
+           <li>C++</li>
+           <li>Java</li>
+           <li>Python</li>
+           <li>SQL</li>
+        </ul>
+        </li>
+     </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Building Acceptance</h2>
+      <h3></h3>
+    </hgroup>
+    <article>
+      <p>Start Small:</p>
+      <ul class="build">
+        <li>Start with non-core elements</li>
+        <li>One piece at a time - you're not going to get a year off to rewrite your whole system</li>
+		  <li>Don't build anything critical first - you <i>will</i> make mistakes</li>
+		  <li>Erlang is easy<sup>[citation needed]</sup> but building concurrent, high load, reliable production systems still isn't</li>
+      </ul>
+    </article>
+  </slide>
+
 
   <slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/shoretel_logo_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
-      <h2>&lt;Thank You!&gt;</h2>
-      <p>Important contact information goes here.</p>
+      <h2>Thank You!</h2>
+      <p>Contact me!</p>
     </article>
     <p class="auto-fadein" data-config-contact>
       <!-- populated from slide_config.json -->
     </p>
   </slide>
 
-  <slide class="logoslide dark nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/google_developers_logo_white.png"></span>
-    </article>
-  </slide>
 
   <slide class="backdrop"></slide>
 

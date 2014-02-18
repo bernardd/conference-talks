@@ -11,13 +11,6 @@ PHLEM
 * This is where I came in
 * And decided "this is for us"
 So, next time I was in the US, I gave a few talks to try to convince people
-"There's no inheritance"
-"No global data at all which is like killing a dog because it has flies"
-"No type checking"
-"Obscure language - NetBSD has more websites than Erlang"
-"If someone likes the syntax, it can be easily [reimplemented] uin C++ using
-operators"
-"The Law of Leaky Abstraction."
 "In my opinion Erlang just adds additional huge level of abstraction without clear benefits and we should avoid it"
 Gotta prove it works
 Plugging into existing binary protocols
