@@ -70,6 +70,20 @@ URL: https://code.google.com/p/io-2012-slides
     <footer class="source white">www.canberrayourfuture.com.au/workspace/images/banner-three.jpg</footer>
   </slide>
 
+  <slide class="fill nobackground" style="background-image: url(images/uluru.jpg)">
+    <hgroup>
+      <h2 class="white"></h2>
+    </hgroup>
+    <footer class="source white">i.imgur.com/OcWz7.jpg</footer>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/taipan.jpg)">
+    <hgroup>
+      <h2 class="white"></h2>
+    </hgroup>
+    <footer class="source white">upload.wikimedia.org/wikipedia/commons/f/fe/Fierce_Snake-Oxyuranus_microlepidotus.jpg</footer>
+  </slide>
+
   <slide class="fill nobackground" style="background-image: url(images/shark.jpg)">
     <hgroup>
       <h2 class="white"></h2>
@@ -77,14 +91,14 @@ URL: https://code.google.com/p/io-2012-slides
     <footer class="source black">media.brainz.org/uploads/2011/03/12-great-white.jpg</footer>
   </slide>
 
-  <slide class="fill nobackground" style="background-image: url(images/cassowary.jpg)">
+  <slide class="fill nobackground" style="background-image: url(images/kangaroo.gif)">
     <hgroup>
       <h2 class="white"></h2>
     </hgroup>
-    <footer class="source white">media.brainz.org/uploads/2011/03/9-cassowary.jpg</footer>
+    <footer class="source black">www.nedmartin.org/v3/amused/kangaroo-kicks-boy-into-dam</footer>
   </slide>
 
-  <slide class="fill nobackground" style="background-image: url(images/skywhale.jpg)">
+  <slide class="fill nobackground" style="background-image: url(images/skywhale.jpg)" hidden>
     <hgroup>
       <h2 class="white"></h2>
     </hgroup>
@@ -114,6 +128,7 @@ URL: https://code.google.com/p/io-2012-slides
         <li>C/C++ code</li>
 		  <li>Massively parallel*</li>
         <li>Robust</li>
+			<li>Fast in-memory database (home-grown)</li>
 		  <li>Surprisingly scalable</li>
       </ul>
 	<footer class="source">* Sort of</footer>
@@ -125,14 +140,23 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Far from Perfect</h2>
     </hgroup>
     <article>
-      <ul style="build">
+      <ul class="build">
         <li>C/C++ code</li>
         <li>One invalid pointer can take down thousands of phones</li>
         <li>No hot upgrades</li>
         <li>Ever tried to debug a crash in STL?</li>
         <li>State machines are not an easy concurrency model</li>
+        <li>Threads are not a practical concurrency model at this scale (in C++)</li>
       </ul>
     </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/shoretel_logo_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Enter Erlang</h2>
+      <h3>"Hey, we're not the first people to have these problems!"</h3>
+    </hgroup>
   </slide>
 
   <slide>
@@ -140,10 +164,27 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Erlwhat?</h2>
     </hgroup>
     <article>
-      <ul style ="build">
+      <ul class ="build">
         <li>Colleague returned from LCA 2007 raving about Erlang</li>
         <li>Natrually we dismissed him as being a lunatic</li>
-        <li>Happened to have a small, stnad-alone task - a multiplexing TFTP server</li>
+			<li>Yet...on the face of it it did seem a good fit:</li>
+			<ul><li>Highly concurrent</li>
+					<li>Robust</li>
+					<li>High level language</li>
+					<li>Even had its own distributed in-memory DB</li>
+			</ul>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>First Experiment</h2>
+      <h3>Elvis TFTP</h3>
+    </hgroup>
+    <article>
+      <ul class ="build">
+        <li>Happened to have a small, stand-alone task - a multiplexing TFTP server for Cisco phones</li>
         <li>World didn't end when we started using it in production</li>
       </ul>
     </article>
@@ -155,7 +196,7 @@ URL: https://code.google.com/p/io-2012-slides
       <h3>The PHone Logic EMulator</h3>
     </hgroup>
     <article>
-      <ul style ="build">
+      <ul class ="build">
          <li>Somehow we'd gotten where we were with no test systems other than real phones</li>
          <li>Initial bit of code was written in "spare time" to emulate a single phone</li>
          <li>I picked it up and with minimal effort made it work for thousands of phones</li>
@@ -176,7 +217,7 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>Convincing the rest of the Team</h2>
     </hgroup>
     <article>
-      <ul style ="build">
+      <ul class ="build">
          <li>Gave talks explaining Erlang from the basics</li>
          <ul>
             <li>What it looks like</li>
@@ -239,6 +280,32 @@ URL: https://code.google.com/p/io-2012-slides
       <q>
         If someone likes the syntax, it can be easily [reimplemented] in C++ using operators
       </q>
+    </article>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/shoretel_logo_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Hooking It In</h2>
+      <h3>You mean we can't just rewrite everything from scratch?</h3>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+		<h2>So There's All This Pesky Legacy Code...</h2>
+		<h3>And for some reason people will be upset if it stops working</h3>
+    </hgroup>
+    <article>
+      <ul class="build">
+		  <li>Erlang use initially restricted to new functionality</li>
+			<ul><li>Call Recording</li>
+				<li>CNAM</li>
+				<li>Monitoring</li>
+			</ul>
+		  <li>Has to interface with the old code</li>
+		  <li>Which means it has to talk...</li>
+      </ul>
     </article>
   </slide>
 
@@ -372,6 +439,59 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
      </ul>
     </article>
   </slide>
+
+  
+  <slide>
+    <hgroup>
+      <h2>Rec files</h2>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="rec">
+constant(MESSAGE_SIZE = 10) % length of the message
+
+record(
+   message_t {
+      id :: integer,
+      key :: long_long,
+      message :: string : [{max_len, 'MESSAGE_SIZE'}],
+})
+</pre>
+<table> <tr>
+	<td>
+      <pre class="prettyprint" data-lang="c++">
+typedef struct {
+   int id;
+   long long key;
+   char message[10];
+} message_t;
+		</pre>
+	</td>
+	<td>
+		<pre class="prettyprint" data-lang="erlang">
+-record( message_t, {
+   id :: integer(),
+   key :: integer(),
+   message :: string()
+}).
+</pre>
+</td>
+</tr></table>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Other Things</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+			<li>Keep your sysadmins happy - use <code>erld</code></li>
+			<li>Monitor your system - Erlang's fault tolerance is a blessing and an occasional curse</li>
+			<li>Use Dialyzer to catch beginner (and advanced) mistakes</li>
+      </ul>
+    </article>
+  </slide>
+  
 
   <slide>
     <hgroup>
