@@ -355,7 +355,7 @@ URL: https://code.google.com/p/io-2012-slides
 typedef struct {
    int id;
    long long key;
-   char message[10];
+   char value[10];
 } message_t;
 </pre>
 <p>Sender</p>
@@ -378,20 +378,20 @@ message_t msg;
     <article>
     <p>Receiver</p>
     <pre class="prettyprint" data-lang="erlang">
-parse(&lt;&lt;Id:32/signed-little, Key:64/signed-little, Message:(10*8)/bitstring&gt;&gt;) -&gt;
+parse(&lt;&lt;Id:32/signed-little, Key:64/signed-little, Value:(10*8)/bitstring&gt;&gt;) -&gt;
    #message_t{
       id = Id,
       key = Key,
-      message = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Message)}.
+      value = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Value)}.
 </pre>
     <p>Sender</p>
     <pre class="prettyprint" data-lang="erlang">
-encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
+encode(#message_t{id = Id, key = Key, value = Value}) -&gt;
    &lt;&lt;
       Id:32/signed-little,
       Key:64/signed-little,
-      (list_to_bitstring(string:substr(Message, 1, 10-1)))/bitstring,
-      0:((10 - lists:min([10-1, length(Message)]))*8)
+      (list_to_bitstring(string:substr(Value, 1, 10-1)))/bitstring,
+      0:((10 - lists:min([10-1, length(Value)]))*8)
    &gt;&gt;.
 </pre>
     </article>
@@ -405,20 +405,20 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
     <article class="smaller">
     <p>Receiver</p>
     <pre class="prettyprint" data-lang="erlang">
-parse(&lt;&lt;Id:32/signed-little, Key:64/signed-little, Message:(10*8)/bitstring, <b>_Pad:(2*8)</b>&gt;&gt;) -&gt;
+parse(&lt;&lt;Id:32/signed-little, Key:64/signed-little, Value:(10*8)/bitstring, <b>_Pad:(2*8)</b>&gt;&gt;) -&gt;
    #message_t{
       id = Id,
       key = Key,
-      message = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Message)}.
+      value = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Value)}.
 </pre>
     <p>Sender</p>
     <pre class="prettyprint" data-lang="erlang">
-encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
+encode(#message_t{id = Id, key = Key, value = Value}) -&gt;
    &lt;&lt;
       Id:32/signed-little,
       Key:64/signed-little,
-      (list_to_bitstring(string:substr(Message, 1, 10-1)))/bitstring,
-      0:((10 - lists:min([10-1, length(Message)]))*8),
+      (list_to_bitstring(string:substr(Value, 1, 10-1)))/bitstring,
+      0:((10 - lists:min([10-1, length(Value)]))*8),
       <b>0:(2*8)</b>
    &gt;&gt;.
 </pre>
@@ -434,21 +434,21 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
     <p>Receiver</p>
     <pre class="prettyprint" data-lang="erlang">
 parse(&lt;&lt;Id:32/signed-little, <b>_Pad/(4*8)</b>, Key:64/signed-little, 
-      Message:(10*8)/bitstring, <b>_Pad2:(6*8)</b>&gt;&gt;) -&gt;
+      Value:(10*8)/bitstring, <b>_Pad2:(6*8)</b>&gt;&gt;) -&gt;
    #message_t{
       id = Id,
       key = Key,
-      message = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Message)}.
+      value = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Value)}.
 </pre>
     <p>Sender</p>
     <pre class="prettyprint" data-lang="erlang">
-encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
+encode(#message_t{id = Id, key = Key, value = Value}) -&gt;
    &lt;&lt;
       Id:32/signed-little,
       <b>0:(4*8), % Pad to long long boundary</b>
       Key:64/signed-little,
-      (list_to_bitstring(string:substr(Message, 1, 10-1)))/bitstring,
-      0:((10 - lists:min([10-1, length(Message)]))*8),
+      (list_to_bitstring(string:substr(Value, 1, 10-1)))/bitstring,
+      0:((10 - lists:min([10-1, length(Value)]))*8),
       <b>0:(6*8) % Pad to boundary of largest struct memeber</b>
    &gt;&gt;.
 </pre>
@@ -489,21 +489,21 @@ record(
    message_t {
       id :: integer,
       key :: long_long,
-      message :: string : [{max_len, 'MESSAGE_SIZE'}],
+      value :: string : [{max_len, 'MESSAGE_SIZE'}],
 })
 </pre></li>
     <li><pre class="prettyprint" data-lang="c++">
 typedef struct {
    int id;
    long long key;
-   char message[10];
+   char value[10];
 } message_t;
 </pre></li>
     <li><pre class="prettyprint" data-lang="erlang">
 -record( message_t, {
    id :: integer(),
    key :: integer(),
-   message :: string()
+   value :: string()
 }).
 </pre>
 </li></ul>
@@ -532,8 +532,8 @@ typedef struct {
       <p>Start Small:</p>
       <ul class="build">
         <li>Start with non-core elements</li>
-        <li>One piece at a time - you're not going to get a year off to rewrite your whole system</li>
         <li>Don't build anything critical first - you <i>will</i> make mistakes</li>
+        <li>One piece at a time - you're not going to get a year off to rewrite your whole system</li>
         <li>Erlang is easy<sup>[<u class="blue">citation needed</u>]</sup> but building concurrent, high load, reliable production systems still isn't</li>
       </ul>
     </article>
