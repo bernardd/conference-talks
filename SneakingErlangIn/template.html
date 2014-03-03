@@ -137,13 +137,13 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
   <slide>
     <hgroup>
-      <h2>Now: ShoreTel Sky</h2>
+      <h2>Now: ShoreTel</h2>
     </hgroup>
     <article>
       <ul>
-      <li>Sells both hosted and premise systems</li>
-      <li>Approx 975 employees (according to Wikipedia)</li>
-      <li>3rd largest business VoIP provider in the US (according to some guy in the corridor)</li>
+        <li>Sells both hosted and premise systems</li>
+        <li>Approx 975 employees (according to Wikipedia)</li>
+        <li>3rd largest business VoIP provider in the US (according to some guy I met in the corridor)</li>
       </ul>
     </article>
   </slide>
@@ -154,7 +154,7 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul>
-        <li>C/C++ code</li>
+        <li>C/C++ code (~250k lines)</li>
         <li>Massively parallel*</li>
         <li>Robust</li>
         <li>Fast in-memory database (home-grown)</li>
@@ -174,11 +174,11 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class="build">
-        <li>C/C++ code</li>
+        <li>C/C++ code (~250k lines)</li>
         <li>One invalid pointer can take down thousands of phones</li>
         <li>No hot upgrades</li>
         <li>Ever tried to debug a crash in the STL?</li>
-        <li>State machines are not an easy concurrency model</li>
+        <li>State machines are not an easy concurrency model (no blocking allowed)</li>
         <li>Threads/Processes are not a practical concurrency model at this scale (in C++)</li>
       </ul>
     </article>
@@ -199,7 +199,7 @@ URL: https://code.google.com/p/io-2012-slides
     <article>
       <ul class ="build">
         <li>Colleague returned from LCA 2007 raving about Erlang</li>
-        <li>Natrually we dismissed him as being a lunatic</li>
+        <li>Naturally we dismissed him as being a lunatic</li>
         <li>Yet...on the face of it it did seem a good fit:</li>
         <ul>
           <li>Highly concurrent</li>
@@ -332,14 +332,15 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class="build">
-      <li>Erlang use initially restricted to new functionality</li>
-      <li>Pick features that weren't "core":</li>
-      <ul><li>Call Recording</li>
-        <li>CNAM</li>
-        <li>Monitoring</li>
-      </ul>
-      <li>Has to interface with the old code</li>
-      <li>Which means it has to talk...</li>
+        <li>Erlang use initially restricted to new functionality</li>
+        <li>Pick features that weren't "core":</li>
+        <ul>
+          <li>Call Recording</li>
+          <li>CNAM</li>
+          <li>Monitoring</li>
+        </ul>
+        <li>Has to interface with the old code</li>
+        <li>Which means it has to talk...</li>
       </ul>
     </article>
   </slide>
