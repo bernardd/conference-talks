@@ -1,4 +1,6 @@
 <!--
+vim: set expandtab shiftwidth=2 tabstop=2:
+
 Google IO 2012/2013 HTML5 Slide Template
 
 Authors: Eric Bidelman <ebidel@gmail.com>
@@ -36,7 +38,7 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
   </slide>
 
-<slide>
+  <slide>
     <hgroup>
       <h2>55 Employees = $19 Billion</h2>
     </hgroup>
@@ -46,12 +48,12 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
-<slide>
+  <slide>
     <hgroup>
     </hgroup>
     <article class="flexbox vcenter">
       <img src="images/erlang.svg" alt="Description" title="Description" />
-		<h2 class="black">We Told You So&#8482;<h2>
+    <h2 class="black">We Told You So&#8482;<h2>
       <footer class="source">erlang.org</footer>
     </article>
   </slide>
@@ -120,15 +122,28 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>ShoreTel Sky</h2>
+      <h2>Then: M5 Networks</h2>
     </hgroup>
     <article>
       <ul>
         <li>Hosted business phone systems</li>
-		<li>VoIP as a Service</li>
-		  <li>Just a phone and an Internet connection on the client side</li>
+        <li>VoIP as a Service</li>
+        <li>Just a phone and an Internet connection on the client side</li>
         <li>Thousands of companies hosted on our servers</li>
-		  <li>&gt;10,000 phones per server</li>
+        <li>&gt;10,000 phones per server</li>
+        <li>&lt;100 employees</li>
+      </ul>
+    </article>
+  </slide>
+  <slide>
+    <hgroup>
+      <h2>Now: ShoreTel Sky</h2>
+    </hgroup>
+    <article>
+      <ul>
+      <li>Sells both hosted and premise systems</li>
+      <li>Approx 975 employees (according to Wikipedia)</li>
+      <li>3rd largest business VoIP provider in the US (according to some guy in the corridor)</li>
       </ul>
     </article>
   </slide>
@@ -140,16 +155,16 @@ URL: https://code.google.com/p/io-2012-slides
     <article>
       <ul>
         <li>C/C++ code</li>
-		  <li>Massively parallel*</li>
+        <li>Massively parallel*</li>
         <li>Robust</li>
-			<li>Fast in-memory database (home-grown)</li>
-				<ul>
-					<li>Speed</li>
-					<li>Reliability</li>
-				</ul>
-		  <li>Surprisingly scalable</li>
+        <li>Fast in-memory database (home-grown)</li>
+        <ul>
+          <li>Speed</li>
+          <li>Reliability</li>
+        </ul>
+        <li>Surprisingly scalable</li>
       </ul>
-	<footer class="source">* Sort of</footer>
+  <footer class="source">* Sort of</footer>
     </article>
   </slide>
 
@@ -185,12 +200,13 @@ URL: https://code.google.com/p/io-2012-slides
       <ul class ="build">
         <li>Colleague returned from LCA 2007 raving about Erlang</li>
         <li>Natrually we dismissed him as being a lunatic</li>
-			<li>Yet...on the face of it it did seem a good fit:</li>
-			<ul><li>Highly concurrent</li>
-					<li>Robust</li>
-					<li>High level language</li>
-					<li>Even had its own distributed in-memory DB</li>
-			</ul>
+        <li>Yet...on the face of it it did seem a good fit:</li>
+        <ul>
+          <li>Highly concurrent</li>
+          <li>Robust</li>
+          <li>High level language</li>
+          <li>Even had its own distributed in-memory DB</li>
+        </ul>
       </ul>
     </article>
   </slide>
@@ -215,10 +231,10 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class ="build">
-         <li>Somehow we'd gotten where we were with no test clients other than real phones</li>
-         <li>Initial bit of code was written in "spare time" to emulate a single phone</li>
-         <li>I picked it up and with minimal effort made it work for thousands of phones</li>
-         <li>Okay, maybe our lunatic was on to something here...</li>
+        <li>Somehow we'd gotten where we were with no test clients other than real phones</li>
+        <li>Initial bit of code was written in "spare time" to emulate a single phone</li>
+        <li>I picked it up and with minimal effort made it work for thousands of phones</li>
+        <li>Okay, maybe our lunatic was on to something here...</li>
       </ul>
     </article>
   </slide>
@@ -236,13 +252,13 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <ul class ="build">
-         <li>Gave talks explaining Erlang from the basics</li>
-         <ul>
-            <li>What it looks like</li>
-            <li>Why it isn't scary</li>
-            <li>Why it was a perfect fit for us</li>
-         </ul>
-         <li>Demonstrated what we'd done so far and <b>how little code it took</b></li>
+        <li>Gave talks explaining Erlang from the basics</li>
+        <ul>
+          <li>What it looks like</li>
+          <li>Why it isn't scary</li>
+          <li>Why it was a perfect fit for us</li>
+        </ul>
+        <li>Demonstrated what we'd done so far and <b>how little code it took</b></li>
       </ul>
     </article>
   </slide>
@@ -311,19 +327,19 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-		<h2>So There's All This Pesky Legacy Code...</h2>
-		<h3>And for some reason people will be upset if it stops working</h3>
+    <h2>So There's All This Pesky Legacy Code...</h2>
+    <h3>And for some reason people will be upset if it stops working</h3>
     </hgroup>
     <article>
       <ul class="build">
-		  <li>Erlang use initially restricted to new functionality</li>
-		  <li>Pick features that weren't "core":</li>
-			<ul><li>Call Recording</li>
-				<li>CNAM</li>
-				<li>Monitoring</li>
-			</ul>
-		  <li>Has to interface with the old code</li>
-		  <li>Which means it has to talk...</li>
+      <li>Erlang use initially restricted to new functionality</li>
+      <li>Pick features that weren't "core":</li>
+      <ul><li>Call Recording</li>
+        <li>CNAM</li>
+        <li>Monitoring</li>
+      </ul>
+      <li>Has to interface with the old code</li>
+      <li>Which means it has to talk...</li>
       </ul>
     </article>
   </slide>
@@ -359,16 +375,16 @@ message_t msg;
       <h2>Erlang Side</h2>
     </hgroup>
     <article>
-<p>Receiver</p>
-		<pre class="prettyprint" data-lang="erlang">
+    <p>Receiver</p>
+    <pre class="prettyprint" data-lang="erlang">
 parse(&lt;&lt;Id:32/signed-little, Key:64/signed-little, Message:(10*8)/bitstring&gt;&gt;) -&gt;
    #message_t{
       id = Id,
       key = Key,
       message = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Message)}.
 </pre>
-<p>Sender</p>
-		<pre class="prettyprint" data-lang="erlang">
+    <p>Sender</p>
+    <pre class="prettyprint" data-lang="erlang">
 encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
    &lt;&lt;
       Id:32/signed-little,
@@ -376,26 +392,26 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
       (list_to_bitstring(string:substr(Message, 1, 10-1)))/bitstring,
       0:((10 - lists:min([10-1, length(Message)]))*8)
    &gt;&gt;.
-	</pre>
+</pre>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-		<h2>Oops</h2>
-		<h3>Forgot the padding...</h3>
+    <h2>Oops</h2>
+    <h3>Forgot the padding...</h3>
     </hgroup>
     <article class="smaller">
-<p>Receiver</p>
-		<pre class="prettyprint" data-lang="erlang">
+    <p>Receiver</p>
+    <pre class="prettyprint" data-lang="erlang">
 parse(&lt;&lt;Id:32/signed-little, Key:64/signed-little, Message:(10*8)/bitstring, <b>_Pad:(2*8)</b>&gt;&gt;) -&gt;
    #message_t{
       id = Id,
       key = Key,
       message = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Message)}.
 </pre>
-<p>Sender</p>
-		<pre class="prettyprint" data-lang="erlang">
+    <p>Sender</p>
+    <pre class="prettyprint" data-lang="erlang">
 encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
    &lt;&lt;
       Id:32/signed-little,
@@ -404,18 +420,18 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
       0:((10 - lists:min([10-1, length(Message)]))*8),
       <b>0:(2*8)</b>
    &gt;&gt;.
-	</pre>
+</pre>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-		<h2>Oops again</h2>
-		<h3>x86_64 pads differently...</h3>
+    <h2>Oops again</h2>
+    <h3>x86_64 pads differently...</h3>
     </hgroup>
     <article class="smaller">
-<p>Receiver</p>
-		<pre class="prettyprint" data-lang="erlang">
+    <p>Receiver</p>
+    <pre class="prettyprint" data-lang="erlang">
 parse(&lt;&lt;Id:32/signed-little, <b>_Pad/(4*8)</b>, Key:64/signed-little, 
       Message:(10*8)/bitstring, <b>_Pad2:(6*8)</b>&gt;&gt;) -&gt;
    #message_t{
@@ -423,8 +439,8 @@ parse(&lt;&lt;Id:32/signed-little, <b>_Pad/(4*8)</b>, Key:64/signed-little,
       key = Key,
       message = lists:takewhile(fun(A) -&gt; A /= 0 end, bitstring_to_list(Message)}.
 </pre>
-<p>Sender</p>
-		<pre class="prettyprint" data-lang="erlang">
+    <p>Sender</p>
+    <pre class="prettyprint" data-lang="erlang">
 encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
    &lt;&lt;
       Id:32/signed-little,
@@ -434,7 +450,7 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
       0:((10 - lists:min([10-1, length(Message)]))*8),
       <b>0:(6*8) % Pad to boundary of largest struct memeber</b>
    &gt;&gt;.
-	</pre>
+</pre>
     </article>
   </slide>
 
@@ -448,25 +464,24 @@ encode(#message_t{id = Id, key = Key, message = Message}) -&gt;
         <li>Erlang parser + yecc + erlydtl</li>
         <li>Many output formats:
         <ul>
-           <li>Erlang (records, encoders/decoders)</li>
-           <li>C++ (structs)</li>
-           <li>Java (classes, encoders/decoders)</li>
-           <li>Python (DB modification)</li>
-           <li>SQL (DB schema and updates)</li>
+          <li>Erlang (records, encoders/decoders)</li>
+          <li>C++ (structs)</li>
+          <li>Java (classes, encoders/decoders)</li>
+          <li>Python (DB modification)</li>
+          <li>SQL (DB schema and updates)</li>
         </ul>
         </li>
      </ul>
     </article>
   </slide>
 
-  
   <slide>
     <hgroup>
       <h2>Rec files</h2>
     </hgroup>
     <article class="smaller">
-<ul class="build">
-		 <li>      <pre class="prettyprint" data-lang="rec">
+    <ul class="build">
+    <li>      <pre class="prettyprint" data-lang="rec">
 constant(MESSAGE_SIZE = 10) % length of the message
 
 record(
@@ -475,15 +490,15 @@ record(
       key :: long_long,
       message :: string : [{max_len, 'MESSAGE_SIZE'}],
 })
-		 </pre></li>
-		 <li><pre class="prettyprint" data-lang="c++">
+</pre></li>
+    <li><pre class="prettyprint" data-lang="c++">
 typedef struct {
    int id;
    long long key;
    char message[10];
 } message_t;
-		 </pre></li>
-		 <li><pre class="prettyprint" data-lang="erlang">
+</pre></li>
+    <li><pre class="prettyprint" data-lang="erlang">
 -record( message_t, {
    id :: integer(),
    key :: integer(),
@@ -499,14 +514,13 @@ typedef struct {
       <h2>Other Things</h2>
     </hgroup>
     <article>
-      <ul class="build">
-			<li>Keep your sysadmins happy - use <code>erld</code></li>
-			<li>Monitor your system - Erlang's fault tolerance is a blessing and an occasional curse</li>
-			<li>Use Dialyzer to catch beginner (and advanced) mistakes</li>
-      </ul>
+    <ul class="build">
+      <li>Keep your sysadmins happy - use <code>erld</code></li>
+      <li>Monitor your system - Erlang's fault tolerance is a blessing and an occasional curse</li>
+      <li>Use Dialyzer to catch beginner (and advanced) mistakes</li>
+    </ul>
     </article>
   </slide>
-  
 
   <slide>
     <hgroup>
@@ -516,10 +530,10 @@ typedef struct {
     <article>
       <p>Start Small:</p>
       <ul class="build">
-         <li>Start with non-core elements</li>
-         <li>One piece at a time - you're not going to get a year off to rewrite your whole system</li>
-         <li>Don't build anything critical first - you <i>will</i> make mistakes</li>
-         <li>Erlang is easy<sup>[<u class="blue">citation needed</u>]</sup> but building concurrent, high load, reliable production systems still isn't</li>
+        <li>Start with non-core elements</li>
+        <li>One piece at a time - you're not going to get a year off to rewrite your whole system</li>
+        <li>Don't build anything critical first - you <i>will</i> make mistakes</li>
+        <li>Erlang is easy<sup>[<u class="blue">citation needed</u>]</sup> but building concurrent, high load, reliable production systems still isn't</li>
       </ul>
     </article>
   </slide>
