@@ -1,0 +1,70 @@
+<!--
+vim: set expandtab shiftwidth=2 tabstop=2:
+
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/shoretel_logo_128.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>I wish Erlang could...</h2>
+    </hgroup>
+    <article>
+      <ul class="build">
+        <li>Be started from an init script</li>
+        <li>Print startup output to the console, <i>then</i> detach</li>
+        <li>Return a useful error code on failed startup</li>
+        <li>Perform log rotation on SIGHUP</li>
+        <li>Be restarted on a crash, like by <code>heart</code> only properly</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="segue dark quote nobackground">
+    <aside class="gdbar right bottom"><img src="images/shoretel_logo_128.png"></aside>
+    <h2>It can!</h2>
+    <article class="flexbox vleft auto-fadein">
+    <h3>https://github.com/ShoreTel-Inc/erld</h3>
+    </article>
+  </slide>
+
+
+  <slide class="backdrop"></slide>
+
+</slides>
+</body>
+</html>

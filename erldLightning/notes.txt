@@ -1,0 +1,10 @@
+Who are we?
+Who am I?
+This is not a HOWTO :)
+Why did it suck?
+Why Erlang? You know why.
+Make sure it's the right tool.
+
+
+
+Thanks: Franko, Erlang Factory SF, Google for slides
