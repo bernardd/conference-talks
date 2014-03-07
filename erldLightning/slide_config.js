@@ -2,7 +2,7 @@ var SLIDE_CONFIG = {
   // Slide settings
   settings: {
     title: 'erld: You need it.',
-    subtitle: 'no, relaly, you do.',
+    subtitle: 'no, really, you do.',
     eventInfo: {
       title: 'Erlang Factory SF',
       date: '2014-03-06'

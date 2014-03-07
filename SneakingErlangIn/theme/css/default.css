@@ -734,13 +734,14 @@ table {
   border-bottom: 1px solid #797979;
 }
 /* line 479, ../scss/default.scss */
-table tr > td:first-child, table th {
+/* first column colour/bold
+ * table tr > td:first-child, table th {
   font-weight: 600;
   color: #515151;
-}
+} */
 /* line 484, ../scss/default.scss */
 table tr:nth-child(odd) {
-  background-color: #e6e6e6;
+/*  background-color: #e6e6e6; */
 }
 /* line 488, ../scss/default.scss */
 table th {

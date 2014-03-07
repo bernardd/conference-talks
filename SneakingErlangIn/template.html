@@ -535,22 +535,32 @@ typedef struct {
         <li>171k lines of Erlang</li>
         <li>Which makes Erlang the majority (in terms of functionality*)</li>
         <li>Erlang used for
-          <ul>
-            <li>Hosted call recording</li>
-            <li>CNAM</li>
-            <li>Web admin UI</li>
-            <li>Support for latest phone models</li>
-            <li>DB sync</li>
-            <li>Call tracking</li>
-            <li>TFTP</li>
-            <li>Parked call management</li>
-            <li>Load testing</li>
-            <li>System monitoring (SNMP etc)</li>
-            <li>SIP director</li>
-          </ul>
+        <table>
+          <tr>
+            <td>
+              <ul>
+                <li>Hosted call recording</li>
+                <li>CNAM</li>
+                <li>Web admin UI</li>
+                <li>Support for latest phone models</li>
+                <li>DB sync</li>
+                <li>Call tracking</li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li>TFTP</li>
+                <li>Parked call management</li>
+                <li>Load testing</li>
+                <li>System monitoring (SNMP etc)</li>
+                <li>SIP director</li>
+              </ul>
+            </td>
+          </tr>
+        </table>
         </li>
       </ul>
-  <footer class="source">* According to a metric I just made up</footer>
+      <footer class="source">* According to a metric I just made up</footer>
     </article>
   </slide>
 
@@ -565,15 +575,16 @@ typedef struct {
         <li>Start with non-core elements</li>
         <li>Don't build anything critical first - you <i>will</i> make mistakes</li>
         <li>One piece at a time - you're not going to get a year off to rewrite your whole system</li>
-        <li>Erlang is easy<sup>[<u class="blue">citation needed</u>]</sup> but building concurrent, high load, reliable production systems still isn't</li>
+        <li>Erlang is easy<sup>[<u class="blue"><strike>citation needed</strike>1</u>]</sup> but building concurrent, high load, reliable production systems still isn't</li>
       </ul>
+      <footer class="source">[1] Mike Williams, Erlang Factory SF 2014 keynote</footer>
     </article>
   </slide>
 
   <slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/shoretel_logo_128.png"></aside>
     <article class="flexbox vleft auto-fadein">
-      <h2>Thank You!</h2>
+      <h2>Thank You! Questions?</h2>
       <p>Send whiskey to:</p>
     </article>
     <p class="auto-fadein" data-config-contact>
